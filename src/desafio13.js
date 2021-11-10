@@ -1,12 +1,12 @@
 const express = require('express')
 const handlebars = require('express-handlebars')
 const initListeners = require('./listeners')
-//const cors = require('cors');
+const cors = require('cors');
 
 const app = express()
 const http = require('http').Server(app)
 const io = require('socket.io')(http)
-//app.use(cors())
+app.use(cors())
 
 
 require('./database/connection')
